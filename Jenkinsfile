@@ -54,10 +54,9 @@ pipeline {
                           "sonar-scanner-8.1.0.6389-windows-x64" `
                           "sonar-scanner"
                     }
-
-                    .\\sonar-scanner\\bin\\sonar-scanner.bat `
-                      -Dsonar.token=$env:SONAR_TOKEN
                 '''
+
+                bat 'sonar-scanner\\bin\\sonar-scanner.bat -Dsonar.token=%SONAR_TOKEN%'
             }
         }
     }
